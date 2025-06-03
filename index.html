@@ -406,13 +406,11 @@
       // Z dôvodu limitu správy tu končí výpis. Pokračovanie v ďalšej správe.
     };
 
-    const dnes = new Date();
-    const mesiac = String(dnes.getMonth() + 1).padStart(2, "0");
-    const den = String(dnes.getDate()).padStart(2, "0");
-    const kluc = `${mesiac}-${den}`;
+const dnes = new Date();
+  const mesiac = String(dnes.getMonth() + 1).padStart(2, '0'); // getMonth() vracia 0–11
+  const den = String(dnes.getDate()).padStart(2, '0');
+  const kluc = `${mesiac}-${den}`;
 
-    const meno = meninySK[kluc] || "Neznáme meno";
-    document.getElementById("meniny").textContent = `Dnes má meniny: ${meno}`;
-  </script>
-</body>
-</html>
+  const meno = meninySK[kluc] || 'Neznáme meniny';
+  document.getElementById('meniny').textContent = `Dnes má meniny: ${meno}`;
+</script>
