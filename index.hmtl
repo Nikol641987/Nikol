@@ -8,13 +8,24 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem;
       font-size: 1.5rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    #meniny {
+      padding: 1rem;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
     }
   </style>
 </head>
 <body>
   <div id="meniny">Načítavam meniny...</div>
+
   <script>
     const meninySK = {
       "01-01": "Nový rok",
@@ -24,7 +35,7 @@
       "12-24": "Adam a Eva",
       "12-25": "1. sviatok vianočný",
       "12-26": "Štefan"
-      // Tu môžeš doplniť celý kalendár
+      // Sem môžeš doplniť zvyšok kalendára
     };
 
     const dnes = new Date();
