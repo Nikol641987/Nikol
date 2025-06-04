@@ -407,10 +407,12 @@
     };
 
 const today = new Date();
-  const month = String(today.getMonth() + 1).padStart(2, '0');
-  const day = String(today.getDate()).padStart(2, '0');
-  const formattedDate = `${month}-${day}`;
-  const menoDna = meninySK[formattedDate] || "Neznáme meno";
+  const day = today.getDate();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+  const formattedKey = `${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  const menoDna = meninySK[formattedKey] || "neznáme meno";
 
-  document.getElementById("meniny").textContent = `Dnes má meniny: ${menoDna}`;
+  const meninyText = `Dnes ${day}.${month}.${year} má meniny ${menoDna}`;
+  document.getElementById("meniny").textContent = meninyText;
 </script>
