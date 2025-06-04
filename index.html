@@ -414,10 +414,16 @@
  const dnes = new Date();
     const mesiac = String(dnes.getMonth() + 1).padStart(2, '0');
     const den = String(dnes.getDate()).padStart(2, '0');
-    const kluc = `${mesiac}-${den}`;
+    const rok = dnes.getFullYear();
 
+    const kluc = `${mesiac}-${den}`;
     const meno = meninySK[kluc] || 'Neznáme meniny';
-    document.getElementById('meniny').innerHTML = `Dnes má meniny: <span class="highlight">${meno}</span>`;
+
+    // Formát dátumu napr. 4.6.2025 bez núl
+    const formatovanyDatum = `${dnes.getDate()}.${mesiac.replace(/^0/, '')}.${rok}`;
+
+    document.getElementById('meniny').innerHTML = 
+      `Dnes má meniny: <span class="highlight">${meno}</span> — <small>${formatovanyDatum}</small>`;
   </script>
 </body>
 </html>
