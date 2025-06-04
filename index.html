@@ -411,13 +411,13 @@
       // Z dôvodu limitu správy tu končí výpis. Pokračovanie v ďalšej správe.
     };
 
-const dnes = new Date();
+ const dnes = new Date();
     const mesiac = String(dnes.getMonth() + 1).padStart(2, '0');
     const den = String(dnes.getDate()).padStart(2, '0');
     const kluc = `${mesiac}-${den}`;
 
     const meno = meninySK[kluc] || 'Neznáme meniny';
-    document.getElementById('meniny').textContent = `Dnes má meniny: ${meno}`;
+    document.getElementById('meniny').innerHTML = `Dnes má meniny: <span class="highlight">${meno}</span>`;
   </script>
 </body>
 </html>
