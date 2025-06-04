@@ -411,19 +411,20 @@
       // Z dôvodu limitu správy tu končí výpis. Pokračovanie v ďalšej správe.
     };
 
- const dnes = new Date();
-    const mesiac = String(dnes.getMonth() + 1).padStart(2, '0');
-    const den = String(dnes.getDate()).padStart(2, '0');
-    const rok = dnes.getFullYear();
+const dnes = new Date();
+const mesiac = String(dnes.getMonth() + 1).padStart(2, '0');
+const den = String(dnes.getDate()).padStart(2, '0');
+const rok = dnes.getFullYear();
 
-    const kluc = `${mesiac}-${den}`;
-    const meno = meninySK[kluc] || 'Neznáme meniny';
+const kluc = `${mesiac}-${den}`;
+const meno = meninySK[kluc] || 'Neznáme meniny';
 
-    // Formát dátumu napr. 4.6.2025 bez núl
-    const formatovanyDatum = `${dnes.getDate()}.${mesiac.replace(/^0/, '')}.${rok}`;
+// Formát dátumu bez nul pre deň a mesiac (napr. 4.6.2025)
+const formatovanyDatum = `${dnes.getDate()}.${String(dnes.getMonth() + 1).replace(/^0/, '')}.${rok}`;
 
-    document.getElementById('meniny').innerHTML = 
-      `Dnes má meniny: <span class="highlight">${meno}</span> — <small>${formatovanyDatum}</small>`;
+document.getElementById('meniny').innerHTML = 
+  `dnes ${formatovanyDatum} má meniny: <span class="highlight">${meno}</span>`;
+    
   </script>
 </body>
 </html>
