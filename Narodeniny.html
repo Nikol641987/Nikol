@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Narodeniny</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.5rem;
+      background-color: #fff;
+      color: #333;
+    }
+
+    #narodeniny {
+      padding: 1rem;
+      border-radius: 8px;
+      background-color: #d0e7ff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="narodeniny">Načítavam narodeniny...</div>
+  
+  <script>
+    const narodeninySK = {
+      "01-07": "Monika V.",
+      "02-19": "Martin K.",
+      "03-22": "Alenka",
+      "03-28": "Vladimír D.",
+      "04-06": "Nikol",
+      "04-22": "Erik",
+      "04-28": "Monika M.",
+      "05-16": "Daniela",
+      "05-26": "Igor",
+      "05-30": "Zuzka I.",
+      "06-01": "Peťo G.",
+      "06-16": "Ľubomír L.",
+      "07-04": "Zuzka Ž.",
+      "07-15": "Jozef O.",
+      "07-24": "Marcel",
+      "08-01": "Ľubka",
+      "08-08": "Milan R.",
+      "08-11": "Martin Š.",
+      "09-11": "Peter G.",
+      "09-20": "Marián",
+      "10-08": "Vladimír V.",
+      "10-09": "Dušan",
+      "10-26": "Milan P.",
+      "11-04": "Adriana",
+      "11-13": "Jozef B.",
+      "11-17": "Milan S.",
+      "11-28": "Milan Ž.",
+      "11-29": "Lucka",
+      "12-13": "Rasťo",
+      "12-14": "Juraj",
+      "12-24": "Karol"
+    };
+
+    const dnes = new Date();
+    const mesiac = String(dnes.getMonth() + 1).padStart(2, '0');
+    const den = String(dnes.getDate()).padStart(2, '0');
+    const kluc = `${mesiac}-${den}`;
+
+    const meno = narodeninySK[kluc];
+
+    const narodeninyDiv = document.getElementById('narodeniny');
+
+    if (meno) {
+      narodeninyDiv.innerHTML = `
+        Dnes má narodeniny: <span class="highlight">${meno}</span><br>
+        <strong>VŠETKO NAJLEPŠIE...</strong>
+      `;
+    } else {
+      narodeninyDiv.innerHTML = "Pekný deň :)";
+    }
+  </script>
+</body>
+</html>
