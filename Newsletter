@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Odhlásenie</title>
+  <style>
+    .message {
+      font-size: 20px;
+      color: green;
+      margin-top: 50px;
+      text-align: center;
+    }
+  </style>
+</hea
